@@ -1,0 +1,44 @@
+<div id="worldclock">
+  <header>
+  <button class="edit-title"{{action 'editCity'}}>
+      {{#if edit}}
+        <strong>Done</strong>
+      {{else}}
+      Edit
+      {{/if}}
+    </button>
+    <h1>
+    World Clock
+    </h1>
+    <button class="plus"{{action 'addcity'}}>+</button>
+  </header>
+  <ul class="worldclock-list">
+    {{#each content}}
+      <li {{action 'displayCanvas'}}>
+      <div {{action 'delete' id}} {{bind-attr class="controller.edit:circle:noncircle"}}>
+         <div id="dash"></div>
+      </div>
+        <p {{bind-attr class="controller.edit:city-edit:city"}}>{{cityName}}</p>
+        <p {{bind-attr class="controller.edit:time-details-edit:time-details"}}>
+        <strong>{{day}}</strong>{{#if hours}}<span>, {{hours}}</span>{{/if}}
+        </p>
+        {{#if controller.canvas}}
+        <p {{bind-attr class=":canvas-clock controller.edit:edit-canvas"}}>
+        {{canvas-clock data=localTime2}}
+        </p>
+        {{else}}
+        <p {{bind-attr class=":time controller.edit:time-edit"}}>
+        {{localTime}}
+        </p>
+        {{/if}}
+      </li>
+    {{/each}}
+  </ul>
+</div>
+<footer>
+  <ul>
+    <li>{{#link-to 'worldclock'}}<span>✈</span><br/> World Clock{{/link-to}}</li>
+    <li>{{#link-to 'timer'}}<span>◴</span><br/>Timer{{/link-to}}</li>
+    <li>{{#link-to 'stopwatch'}}<span>◷</span><br/>Stopwatch{{/link-to}}</li>
+  </ul>
+</footer>

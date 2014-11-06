@@ -1,0 +1,369 @@
+
+* {
+  font-family: "HelveticaNeue-Light", Arial;
+  margin: 0px;
+  padding: 0px;
+}
+
+input, button {
+  outline: none;
+}
+header {
+  z-index: 2;
+  top: 0px;
+  width: 100%;
+  background-color: #efefef;
+  height: 64px;
+  position: fixed;
+  border-bottom: 1px solid #cccccc;
+}
+header h1 {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 18px;
+}
+footer {
+  z-index: 2;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 44px;
+  border-top: 1px solid #cccccc;
+  background: #efefef;
+}
+footer ul {
+  margin-top: 7px;
+}
+footer ul li {
+  display: inline;
+  float: left;
+  width: 33%;
+  text-align: center;
+}
+footer ul li a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 12px;
+}
+footer ul li a.active {
+  color: red;
+}
+footer ul li a span {
+  font-size: 25px;
+  line-height: 0px;
+}
+ul.worldclock-list {
+  margin-top: 64px;
+  width: 100%;
+  height: auto;
+  padding-left: 0px;
+  list-style: none;
+  z-index: 1;
+  padding-bottom: 44px;
+}
+ul.worldclock-list li {
+  position: relative;
+  height: 90px;
+  border-bottom: 1px solid #cccccc;
+  background: white;
+}
+ul.worldclock-list li p {
+  position: absolute;
+}
+ul.worldclock-list li p.city {
+  font-size: 20px;
+  left: 10px;
+  top: 25px;
+  transition:.6s;
+}
+
+ul.worldclock-list li p.time-details {
+  font-size: 12px;
+  left: 10px;
+  top: 60px;
+  transition:.6s;
+}
+.buttons {
+  position: relative;
+  width: 100%;
+  height: 120px;
+}
+.buttons button {
+  top: 20px;
+  position: absolute;
+  border-width: 1px;
+  border-style: solid;
+  height: 80px;
+  width: 80px;
+  border-radius: 40px;
+  background-color: white;
+  font-size: 15px;
+}
+.buttons button:first-child {
+  left: 33%;
+  margin-left: -40px;
+}
+.buttons button:last-child {
+  left: 66%;
+  margin-left: -40px;
+}
+.buttons button.button-stop,
+.buttons button.button-cancel {
+  border-color: red;
+  color: red;
+}
+.buttons button.button-start {
+  border-color: green;
+  color: green;
+}
+.buttons button.button-pause,
+.buttons button.button-lap,
+.buttons button.button-reset {
+  border-color: black;
+  color:black;
+}
+.buttons button:disabled {
+  border-color: gray;
+  color: gray;
+}
+div.counter {
+  height: 160px;
+  background: white;
+  border-bottom: 1px solid #cccccc;
+  position: relative;
+}
+div.counter p {
+  position: absolute;
+}
+div.counter p.lap-time {
+  color: #ccc;
+  font-size: 18px;
+  right: 10px;
+  top: 10px;
+}
+div.counter p.total-time {
+  font-family: "HelveticaNeue-UltraLight", Arial;
+  font-size: 70px;
+  top: 45px;
+  left: 0px;
+  right: 0px;
+  text-align: center;
+}
+div.stopwatch-content {
+  top: 64px;
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  padding-left: 0px;
+  list-style: none;
+  z-index: 1;
+  background-color: #efefef;
+  overflow: hidden;
+}
+div.stopwatch-content ul.laps {
+  border-top: 1px solid #cccccc;
+  position: absolute;
+  top: 281px;
+  bottom: 44px;
+  width: 100%;
+  overflow-y: scroll;
+}
+div.stopwatch-content ul.laps li {
+  position: relative;
+  height: 40px;
+  border-bottom: 1px solid #cccccc;
+}
+div.stopwatch-content ul.laps li p {
+  position: absolute;
+}
+div.stopwatch-content ul.laps li p.lap-label {
+  font-size: 18px;
+  color: #555;
+  left: 10px;
+  top: 10px;
+}
+div.stopwatch-content ul.laps li p.lap-time {
+  font-size: 22px;
+  right: 20%;
+  top: 10px;
+}
+div.timer-content {
+  top: 64px;
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  padding-left: 0px;
+  list-style: none;
+  z-index: 1;
+  background-color: #efefef;
+  overflow: hidden;
+}
+div.timer-content div.inputs {
+  position: relative;
+  height: 160px;
+  border-bottom: 1px solid #cccccc;
+}
+div.timer-content div.inputs input {
+  height: 160px;
+  background: white;
+  position: relative;
+  width: 50%;
+  float: left;
+  border: 0px;
+  font-size: 90px;
+  text-align: center;
+}
+#listTile {
+  text-align: center;
+  margin-top: 15px;
+}
+#cityList {
+  background-color: white;
+  height:65px;
+}
+#listInput {
+  margin-left: 10px;
+  background-color: #efefef;
+  width: 76%;
+  height: 25px;
+  border: 0;
+}
+#cancel {
+  margin-right: 10px;
+  float: right;
+}
+.listBody p {
+  text-align: center;
+  top: 170px;
+  position: relative;
+}
+#cityList span {
+  color:red;
+}
+.listBody {
+  background: white;
+  margin-top: 64px;
+}
+.category {
+  height: 20px;
+  width:100%;
+  border-bottom: 1px solid #cccccc;
+  background: #efefef;
+}
+.category span {
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 18px;
+  color:#5D5D53;
+}
+.subList {
+  height:40px;
+  border-bottom: 1px solid #cccccc;
+}
+
+.subList div {
+  margin-top: 15px;
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.noncircle{
+  display: none;
+}
+
+.circle {
+  border-radius: 50%;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: red;
+  position: relative;
+  left: 10px;
+  top:34px;
+}
+#dash {
+  border-bottom: 2px solid ;
+  border-top: 2px solid ;
+  border-left: 14px solid ;
+  top: 8px;
+  left: 3px;
+  color: white;
+  position: absolute;
+}
+.city-edit {
+  left:45px;
+  position: relative;
+  font-size: 20px;
+  top: 25px;
+  transition:.6s;
+}
+.time-details-edit {
+  font-size: 12px;
+  left: 45px;
+  top: 60px;
+  position: relative;
+  transition:.6s;
+}
+ul.worldclock-list li p.canvas-clock {
+  right: 3px;
+  width: 70px;
+  opacity: 1;
+  top:10px;
+  transition: opacity .3s linear;
+}
+ul.worldclock-list li p.edit-canvas {
+  opacity: 0;
+  top:10px;
+  transition:opacity .3s linear;
+}
+ul.worldclock-list li p.time {
+  font-size: 25px;
+  right: 10px;
+  top: 18px;
+  transition: opacity 1s linear;
+}
+.time-edit {
+  top:18px;
+  opacity: 0;
+  transition:opacity .3s linear;
+}
+.edit-title {
+  display: inline;
+  position: absolute;
+  top: 25px;
+  left: 10px;
+  color: red;
+  font-size: 16px;
+}
+
+.plus {
+  display: inline;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: red;
+  font-size: 32px;
+}
+
+#worldclock button {
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+#cityList button {
+  padding: 0;
+  border: none;
+  background: none;
+  color:red;
+  font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
